@@ -1,15 +1,22 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <h2>Essential Links</h2>
     <ul>
-      <li v-for="user in users">
-        {{user.firstname}} {{user.lastname}}
-      </li>
+      <li><a href="https://vuejs.org" target="_blank">Core Docs</a></li>
+      <li><a href="https://forum.vuejs.org" target="_blank">Forum</a></li>
+      <li><a href="https://gitter.im/vuejs/vue" target="_blank">Gitter Chat</a></li>
+      <li><a href="https://twitter.com/vuejs" target="_blank">Twitter</a></li>
+      <br>
+      <li><a href="http://vuejs-templates.github.io/webpack/" target="_blank">Docs for This Template</a></li>
     </ul>
-
-    <input type="text" v-model="input_val">
-    <span v-text="input_val"></span>
-    <button v-on:click="counter++">You'vev clicked this button {{counter}}times</button>
+    <h2>Ecosystem</h2>
+    <ul>
+      <li><a href="http://router.vuejs.org/" target="_blank">vue-router</a></li>
+      <li><a href="http://vuex.vuejs.org/" target="_blank">vuex</a></li>
+      <li><a href="http://vue-loader.vuejs.org/" target="_blank">vue-loader</a></li>
+      <li><a href="https://github.com/vuejs/awesome-vue" target="_blank">awesome-vue</a></li>
+    </ul>
   </div>
 </template>
 
@@ -18,14 +25,7 @@ export default {
   name: 'hello',
   data () {
     return {
-      msg: 'Welcome to Your Vue.js App',
-      users: [
-        {firstname: 'aaa', lastname: '111'},
-        {firstname: 'bbb', lastname: '222'},
-        {firstname: 'ccc', lastname: '333'}
-      ],
-      input_val: '',
-      counter: 0
+      msg: 'Welcome to Your Vue.js App'
     }
   }
 }
