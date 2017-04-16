@@ -11,13 +11,22 @@
     <!-- use router-link component for navigation. -->
     <!-- specify the link by passing the `to` prop. -->
     <!-- <router-link> will be rendered as an `<a>` tag by default -->
-    <router-link to="/user/Mather">Go to Mather</router-link>
+    <router-link :to="{ name: 'userHome', params: { username: 'Mather' }}">Go to Mather and Post 23333</router-link>
+    <br>
     <router-link to="/user/Admin">Go to Admin</router-link>
     <!--<a class="btn btn-default" href="#" role="button">Link</a>-->
   </p>
   <!-- route outlet -->
   <!-- component matched by the route will render here -->
   <router-view></router-view>
+
+  <br>
+
+  <router-view class="view header" name="header"></router-view>
+  <router-view class="view main" name="main"></router-view>
+  <router-view class="view footer" name="footer"></router-view>
+
+
 </div>
 </body>
 </html>

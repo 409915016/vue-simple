@@ -1,13 +1,17 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import Vue from 'vue'
+import Vue from "vue";
 //import App from './App'
-import VueRouter from 'vue-router'
-import VueResource from 'vue-resource'
-import UserHome from './components/UserHome.vue'
-import UserPost from './components/UserPost.vue'
-import UserHomeNone from './components/UserHomeNone.vue'
-import 'bootstrap/dist/css/bootstrap.css'
+import VueRouter from "vue-router";
+import VueResource from "vue-resource";
+import UserHome from "./components/UserHome.vue";
+import UserPost from "./components/UserPost.vue";
+import layout_header from "./components/layout/header.vue";
+import layout_main from "./components/layout/main.vue";
+import layout_footer from "./components/layout/footer.vue";
+
+import UserHomeNone from "./components/UserHomeNone.vue";
+import "bootstrap/dist/css/bootstrap.css";
 
 Vue.use(VueRouter)
 Vue.use(VueResource)
@@ -17,7 +21,17 @@ Vue.config.productionTip = false
 const router = new VueRouter({
   routes: [
     {
-      path: '/user/:username', component: UserHome,
+      path: '/',
+      components: {
+        header: layout_header,
+        main: layout_main,
+        footer: layout_footer
+      }
+    },
+    {
+      path: '/user/:username',
+      component: UserHome,
+      name: 'userHome',
       children: [
         {path: '', component: UserHomeNone},
         {
@@ -35,3 +49,6 @@ const router = new VueRouter({
 const app = new Vue({
   router
 }).$mount('#app')
+
+router.push({name: 'user', params: {userId: 123}})
+
