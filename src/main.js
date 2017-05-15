@@ -4,14 +4,17 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import VueResource from "vue-resource";
 
-import Home from './components/Home'
 
+import App from "./App";
+import Home from "./components/Home";
+import store from './store'
+import TimeEntries from "./components/TimeEntries";
 import "bootstrap/dist/css/bootstrap.css";
 
-Vue.use(VueRouter)
-Vue.use(VueResource)
+Vue.use(VueRouter);
+Vue.use(VueResource);
 
-Vue.config.productionTip = false
+Vue.config.productionTip = false;
 
 const routes = [{
   path : '/',
@@ -19,7 +22,16 @@ const routes = [{
 },{
   path : '/home',
   component : Home
+},{
+  path : '/time-entries',
+  component : TimeEntries,
+  children : [{
+    path : 'log-time',
+    // 懒加载
+    component : resolve => require(['./components/LogTime.vue'],resolve),
+  }]
 }];
+
 
 const router = new VueRouter({
   routes
@@ -28,5 +40,6 @@ const router = new VueRouter({
 const app = new Vue({
   el: '#app',
   router,
+  store,
   ...App,
 });

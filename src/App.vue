@@ -7,8 +7,12 @@
           计划板
         </a>
         <ul class="nav navbar-nav">
-          <li><router-link to="/home">首页</router-link></li>
-          <li><router-link to="/time-entries">计划列表</router-link></li>
+          <li>
+            <router-link to="/home">首页</router-link>
+          </li>
+          <li>
+            <router-link to="/time-entries">计划列表</router-link>
+          </li>
         </ul>
       </div>
     </nav>
@@ -24,18 +28,19 @@
 </template>
 
 <script>
-export default {
-  name: 'app'
-}
-</script>
+  import Sidebar from './components/Sidebar.vue'
 
+  export default {
+    components: { 'sidebar': Sidebar },
+  }
+</script>
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+  #app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
+  }
 </style>
