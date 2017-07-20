@@ -7,6 +7,7 @@ import App from "./App.vue"
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
+export const bus = new Vue();
 
 Vue.component('greeting', {
   template: '<p>name: {{ name }} <button v-on:click="changeName" > change name </button> </p>',

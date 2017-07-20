@@ -1,26 +1,35 @@
 <template>
   <div>
-    <app-header></app-header>
-    <app-ninjas></app-ninjas>
-    <app-footer></app-footer>
-  </div>
+    <keep-alive>
+      <component v-bind:is="component"></component>
+    </keep-alive>
 
+    <button @click="component = 'form-one' ">Show form one</button>
+    <button @click=" component = 'form-two' ">Show form two</button>
+  </div>
 </template>
 
 <script>
-  import Header from "./components/Header.vue"
-  import Footer from "./components/Footer.vue"
-  import Ninjas from "./components/Ninjas.vue"
+  import formOne from  "./components/formOne.vue"
+  import formTwo from  "./components/formTwo.vue"
 
   export default {
     components: {
-      'app-header': Header,
-      'app-footer': Footer,
-      'app-ninjas': Ninjas
+      'form-one': formOne,
+      'form-two': formTwo
     },
     data() {
       return {
-        title: 'Ninjas App'
+        component: 'form-one'
+      }
+
+    },
+    methods: {
+      updateTitle(updatedTitle){
+        this.title = updatedTitle;
+      },
+      handleSubmit (){
+
       }
 
     }
