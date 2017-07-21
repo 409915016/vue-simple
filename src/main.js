@@ -2,12 +2,15 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import Vue from "vue";
 import App from "./App.vue"
+import VueResource from 'vue-resource'
 // import Ninjas from "./Ninjas.vue"
 // Vue.component('ninjas', Ninjas);
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 export const bus = new Vue();
+
+Vue.use(VueResource);
 
 Vue.component('greeting', {
   template: '<p>name: {{ name }} <button v-on:click="changeName" > change name </button> </p>',
