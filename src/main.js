@@ -16,15 +16,9 @@ Vue.use(VueResource);
 Vue.use(VueRouter);
 
 const router = new VueRouter({
-  routes: Routes
+  routes: Routes,
+  mode: 'history'
 })
-
-//Costom directive
-// Vue.directive('rainbow', {
-//   bind(el, binding, vnode){
-//     el.style.color = '#' + Math.random().toString().slice(2, 8);
-//   }
-// })
 
 Vue.directive('theme', {
   bind(el, binding, vnode){
@@ -59,8 +53,6 @@ const app = new Vue({
   methods: {},
   computed: {}
 });
-
-
 
 Vue.component('greeting', {
   template: '<p>name: {{ name }} <button v-on:click="changeName" > change name </button> </p>',
