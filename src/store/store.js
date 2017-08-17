@@ -1,5 +1,5 @@
-import Vue from "vue";
-import Vuex from "vuex";
+import Vue from 'vue';
+import Vuex from 'vuex';
 
 Vue.use(Vuex)
 
@@ -24,11 +24,17 @@ export const store = new Vuex.Store({
     }
   },
   mutations: {
-    reducePrice: state => {
+    reducePrice: (state, payload) => {
       state.products.forEach(product => {
-        product.price -= 1;
+        product.price -= payload;
       })
     }
+  },
+  actions: {
+    reducePrice: (context, payload) => {
+      setTimeout(() => {
+        context.commit('reducePrice', payload)
+      }, 2000)
+    }
   }
-
 })
