@@ -7,9 +7,37 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
 </head>
+<style>
+  #canvas {
+    width: 600px;
+    padding: 200px 20px;
+    text-align: center;
+    border: 1px solid #333;
+  }
+
+  span {
+    background: red;
+    display: inline-block;
+    padding: 10px;
+    color: #fff;
+    margin: 10px 0;
+  }
+
+  .available span {
+    background: green;
+  }
+
+  .nearby span:after {
+    content: 'nearby';
+    margin-left: 10px;
+
+  }
+</style>
 <body>
   <div id="app">
   </div>
-
 </body>
+
+
 </html>
+
