@@ -3,7 +3,6 @@
 import Vue from "vue";
 //import App from './App'
 import VueRouter from "vue-router";
-import VueResource from "vue-resource";
 import UserHome from "./components/UserHome.vue";
 import UserPost from "./components/UserPost.vue";
 import layout_header from "./components/layout/header.vue";
@@ -14,7 +13,6 @@ import UserHomeNone from "./components/UserHomeNone.vue";
 import "bootstrap/dist/css/bootstrap.css";
 
 Vue.use(VueRouter)
-Vue.use(VueResource)
 
 Vue.config.productionTip = false
 
